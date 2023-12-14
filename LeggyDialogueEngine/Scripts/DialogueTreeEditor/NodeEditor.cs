@@ -78,7 +78,7 @@ public class NodeEditor : MonoBehaviour
 
         foreach(var child in parentNode.Children)
         {
-            var childObject = AddNode(parentNodeObject);
+            var childObject = parentNodeObject.AddChild();
             childObject.dialogueField.text = child.Value.PlayerDialog;
             childObject.responseField.text = child.Value.Response;
             BuildTree(child, childObject);
@@ -88,7 +88,7 @@ public class NodeEditor : MonoBehaviour
     public void LoadTree(string path)
     {
        tree = DialogueTree.Open(path);
-        //destroy all nodes
+        rootNodeObject.DestroyChildren();
         rootNodeObject.dialogueField.text = tree.ConversationStart.Value.PlayerDialog;
         rootNodeObject.responseField.text = tree.ConversationStart.Value.Response;
         BuildTree(tree.ConversationStart, rootNodeObject);
