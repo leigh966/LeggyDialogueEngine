@@ -32,11 +32,11 @@ Adding a child node:
 
 Saving your tree:
 ![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/9e2dea20-c427-4411-8260-92cbdd26af56)
-![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/1e135d1a-5ee0-4924-965e-200dcf180c14)
+![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/1e135d1a-5ee0-4924-965e-200dcf180c14)  
 On clicking submit, your current tree will be saved as <name you input>.dtree
 
-Opening a tree:
-![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/04545b0b-5a90-4d57-a1de-d821075ed939)
+Opening a tree:  
+![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/04545b0b-5a90-4d57-a1de-d821075ed939)  
 Select the tree you wish to load from the dropdown and hit Confirm to load your tree.
 The tree you wish to load must be in the current working directory (if running in the editor, this will be the root directory of your project)
 
