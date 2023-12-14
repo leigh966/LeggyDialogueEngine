@@ -20,12 +20,13 @@ After selecting an option with a child node:
 
 ### DialogueTreeEditor
 On start:
--Use WASD to move the camera around the scene
--Use the scroll wheel to zoom
--Drag nodes to move them - this is purely cosmetic and will not affect the produced .dtree file
+- Use WASD to move the camera around the scene
+- Use the scroll wheel to zoom
+- Drag nodes to move them - this is purely cosmetic and will not affect the produced .dtree file
+   
 ![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/a36f028e-acf4-4167-ba4f-67ef1b5621c8)
 
-Adding a child node:
+Adding a child node:  
 ![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/24f36dcb-5804-464b-845a-cc031d5bf057)
 ![image](https://github.com/leigh966/LeggyDialogueEngine/assets/56688635/c3e714fa-6715-4881-a986-bfabae732d29)
 
