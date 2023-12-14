@@ -13,10 +13,12 @@ public class NodeEditor : MonoBehaviour
     public float zoomSpeed;
     public Vector3 childDisplacement;
     public float camMoveSpeed;
+    private List<LineBehaviour> lines;
 
     // Start is called before the first frame update
     void Start()
     {
+        lines = new List<LineBehaviour>();
         tree = new DialogueTree("", "");
         rootNodeObject.node = tree.ConversationStart;
  
@@ -58,6 +60,7 @@ public class NodeEditor : MonoBehaviour
         line.parent = parentNodeTransform;
         line.child = childNodeTransform;
         line.canvas = canvas.transform;
+        lines.Add(line);
     }
 
     public NodeBehaviour AddNode(NodeBehaviour parentNode)
@@ -78,17 +81,28 @@ public class NodeEditor : MonoBehaviour
 
         foreach(var child in parentNode.Children)
         {
-            var childObject = parentNodeObject.AddChild();
+            var childObject = AddNode(parentNodeObject);
+            parentNodeObject.AddChild(childObject);
             childObject.dialogueField.text = child.Value.PlayerDialog;
             childObject.responseField.text = child.Value.Response;
             BuildTree(child, childObject);
         }
     }
 
+    public void ResetTree()
+    {
+        rootNodeObject.DestroyChildren();
+        foreach(var line in lines)
+        {
+            Destroy(line.gameObject);
+        }
+        lines = new List<LineBehaviour>();
+    }
+
     public void LoadTree(string path)
     {
        tree = DialogueTree.Open(path);
-        rootNodeObject.DestroyChildren();
+        ResetTree();
         rootNodeObject.dialogueField.text = tree.ConversationStart.Value.PlayerDialog;
         rootNodeObject.responseField.text = tree.ConversationStart.Value.Response;
         BuildTree(tree.ConversationStart, rootNodeObject);

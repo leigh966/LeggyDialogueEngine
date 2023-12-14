@@ -25,12 +25,18 @@ public class NodeBehaviour : MonoBehaviour
         
     }
 
-    public NodeBehaviour AddChild()
+    public void AddChild()
     {
         var newNode = editor.AddNode(this);
-        children.Add(newNode);
-        return newNode;
+        AddChild(newNode);
+
     }
+
+    public void AddChild(NodeBehaviour newNode)
+    {
+        children.Add(newNode);
+    }
+
     Vector3 diff = Vector3.zero;
     public void OnMouseDrag()
     {
@@ -54,6 +60,7 @@ public class NodeBehaviour : MonoBehaviour
         {
             child.Destroy();
         }
+        children.Clear();
     }
 
     public void Destroy() 
