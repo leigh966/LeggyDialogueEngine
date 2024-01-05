@@ -28,5 +28,6 @@ public class SavePopupBehaviour : MonoBehaviour
     public void Save()
     {
         editor.Save(nameField.text);
+        CloseSavePopup();
     }
 }
